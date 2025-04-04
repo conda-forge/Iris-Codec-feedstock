@@ -6,6 +6,6 @@ cxx_compiler:
   - gxx               # [linux]
 channel_sources:
   - conda-forge
-MACOSX_SDK_VERSION:   # [osx and x86_64]
-  - "10.15"           # [osx and x86_64]
+MACOSX_SDK_VERSION:   # [osx]
+  - "10.15"           # [osx]
   

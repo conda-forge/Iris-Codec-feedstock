@@ -30,7 +30,6 @@ requirements:
     - libjpeg-turbo 3.0
     - libavif
     - openslide               # [not win]
-    - yasm                    # [x86_64]
   host:
     - python
     - libjpeg-turbo 3.0
