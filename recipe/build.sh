@@ -18,3 +18,8 @@ cmake ${CMAKE_ARGS} -D CMAKE_INSTALL_PREFIX=$PREFIX \
 cmake --build . --config Release -j$CPU_COUNT
 
 cmake --install .
+
+# Skip ``ctest`` when cross-compiling
+if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR:-}" != "" ]]; then
+  ctest
+fi
