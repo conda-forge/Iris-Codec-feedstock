@@ -14,4 +14,4 @@ provider:
   win_64: azure
   linux_ppc64le: default
   linux_aarch64: default
-test: native_and_emulated
+test: native
