@@ -3,7 +3,7 @@
 mkdir build
 cd  build
 
-cmake .. -GNinja ^
+cmake .. -G Ninja ^
     -D CMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
     -D CMAKE_PREFIX_PATH=%LIBRARY_PREFIX% ^
     -D CMAKE_INSTALL_PYTHON_LIBDIR=%SP_DIR% ^
