@@ -5,8 +5,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/IrisDigitalPathology/Iris-Codec/archive/refs/tags/2025.2.0a2.tar.gz
-  sha256: b63d91141e1d9bf12b3c2dbfa6b0ef339fcd659e8e4a5e6675ee0453aa490ee1
+  url: https://github.com/IrisDigitalPathology/Iris-Codec/archive/refs/tags/2025.2.0a3.tar.gz
+  sha256: 8b6ca82459da6415bf90792b80a8dd947859632b755362e0f213df91680f132e
 build:
   number: 0
   run_exports:
