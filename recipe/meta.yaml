@@ -1,4 +1,4 @@
-{% set version = "2025.2.0a1" %}
+{% set version = "2025.2.0a3" %}
 
 package:
   name: iris-codec
