@@ -8,7 +8,7 @@ source:
   url: https://github.com/IrisDigitalPathology/Iris-Codec/archive/refs/tags/2025.2.0a3.tar.gz
   sha256: 8b6ca82459da6415bf90792b80a8dd947859632b755362e0f213df91680f132e
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage('iris-codec', max_pin='x.x') }}
     - libjpeg-turbo
