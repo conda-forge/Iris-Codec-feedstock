@@ -13,7 +13,7 @@ cmake .. -G Ninja ^
     -D IRIS_BUILD_ENCODER=ON ^
     -D IRIS_BUILD_DEPENDENCIES=OFF ^
     -D IRIS_BUILD_PYTHON=ON ^
-    -D IRIS_USE_OPENSLIDE=OFF ^
+    -D IRIS_USE_OPENSLIDE=ON ^
     %SRC_DIR%
 if errorlevel 1 exit 1
 
