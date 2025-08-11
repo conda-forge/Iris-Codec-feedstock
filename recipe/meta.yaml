@@ -31,19 +31,19 @@ requirements:
     - libjpeg-turbo 3.0
     - libavif
     - libpng
-    - openslide               # [not win]
+    - openslide               
   host:
     - python
     - libjpeg-turbo 3.0
     - libavif
     - libpng
-    - openslide               # [not win]
+    - openslide               
   run:
     - python
     - libjpeg-turbo 3.0
     - libavif
     - libpng
-    - openslide               # [not win]
+    - openslide               
 
 
 test:
