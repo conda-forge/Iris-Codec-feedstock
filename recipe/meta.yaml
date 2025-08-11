@@ -28,19 +28,19 @@ requirements:
     - make                    # [not win]
     - ninja                   # [win]
     - pybind11
-    - libjpeg-turbo 3.0
+    - libjpeg-turbo 
     - libavif
     - libpng
     - openslide               
   host:
     - python
-    - libjpeg-turbo 3.0
+    - libjpeg-turbo 
     - libavif
     - libpng
     - openslide               
   run:
     - python
-    - libjpeg-turbo 3.0
+    - libjpeg-turbo
     - libavif
     - libpng
     - openslide               
