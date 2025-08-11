@@ -258,7 +258,7 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-iris--codec-green.svg?style=for-the-badge)](https://anaconda.org/conda-forge/iris-codec) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/iris-codec.svg?style=for-the-badge)](https://anaconda.org/conda-forge/iris-codec) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/iris-codec.svg?style=for-the-badge)](https://anaconda.org/conda-forge/iris-codec) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/iris-codec.svg?style=for-the-badge)](https://anaconda.org/conda-forge/iris-codec) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-iris--codec-green.svg)](https://anaconda.org/conda-forge/iris-codec) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/iris-codec.svg)](https://anaconda.org/conda-forge/iris-codec) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/iris-codec.svg)](https://anaconda.org/conda-forge/iris-codec) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/iris-codec.svg)](https://anaconda.org/conda-forge/iris-codec) |
 
 Installing Iris-Codec
 =====================
@@ -307,58 +307,6 @@ mamba repoquery whoneeds iris-codec --channel conda-forge
 mamba repoquery depends iris-codec --channel conda-forge
 ```
 
-# Python Example API
-
-Import the Python API and Iris Codec Module.
-
-```python
-#Import the Iris Codec Module
-from Iris import Codec
-slide_path = 'path/to/slide_file.iris'
-```
-
-Perform a deep validation of the slide file structure. This will navigate the internal offset-chain and check for violations of the IFE standard.
-```python
-result = Codec.validate_slide_path(slide_path)
-if (result.success() == False):
-    raise Exception(f'Invalid slide file path: {result.message()}')
-print(f"Slide file '{slide_path}' successfully passed validation")
-```
-
-Open a slide file. The following conditional will always return True if the slide has already passed validation but you may skip validation and it will return with a null slide object (but without providing the Result debug info).
-```python
-slide = Codec.open_slide(slide_path)
-if (not slide): 
-    raise Exception('Failed to open slide file')
-```
-Get the slide abstraction, read off the slide dimensions, and then print it to the console.  
-```py
-# Get the slide abstraction
-result, info = slide.get_info()
-if (result.success() == False):
-    raise Exception(f'Failed to read slide information: {result.message()}')
-
-# Print the slide extent to the console
-extent = info.extent
-print(f"Slide file {extent.width} px by {extent.height}px with an encoding of {info.encoding}. The layer extents are as follows:")
-print(f'There are {len(extent.layers)} layers comprising the following dimensions:')
-for i, layer in enumerate(extent.layers):
-    print(f' Layer {i}: {layer.x_tiles} x-tiles, {layer.y_tiles} y-tiles, {layer.scale:0.0f}x scale')
-```
-Generate a quick low-power view of the slide using Pillow images.
-```py
-from PIL import Image
-layer_index = 0 # Lowest power layer is layer zero (0)
-scale = int(extent.layers[layer_index].scale)
-composite = Image.new('RGBA',(extent.width * scale, extent.height * scale))
-layer_extent = extent.layers[layer_index]
-for y in range(layer_extent.y_tiles):
-  for x in range (layer_extent.x_tiles):
-    tile_index = y*layer_extent.x_tiles+x
-    composite.paste(Image.fromarray(slide.read_slide_tile(layer_index, tile_index)),(256*x,256*y)) #Iris tiles are always 256 px in each dim
-composite.show()
-```
-**CAUTION:** Despite Iris' native fast read speed, higher resolution layers may take substantial time and memory for Pillow to create a full image as it does not create tiled images.
 
 About conda-forge
 =================
