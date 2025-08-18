@@ -1,14 +1,14 @@
-{% set version = "2025.2.0a3" %}
+{% set version = "2025.3.1" %}
 
 package:
   name: iris-codec
   version: {{ version }}
 
 source:
-  url: https://github.com/IrisDigitalPathology/Iris-Codec/archive/refs/tags/2025.2.0a3.tar.gz
-  sha256: 8b6ca82459da6415bf90792b80a8dd947859632b755362e0f213df91680f132e
+  url: https://github.com/IrisDigitalPathology/Iris-Codec/archive/refs/tags/2025.3.1.tar.gz
+  sha256: dadaf8cda0c6f98f2cd02b49a57c7afae56fdbcf2228ec35813f98529953ae87
 build:
-  number: 1
+  number: 0
   run_exports:
     - {{ pin_subpackage('iris-codec', max_pin='x.x') }}
     - libjpeg-turbo
