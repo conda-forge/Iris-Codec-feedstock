@@ -27,7 +27,8 @@ requirements:
     - cmake
     - meson
     - make                    # [not win]
-    - ninja                            
+    - ninja
+    - pkg-config                            
     - pybind11
     - libhwy
     - libjpeg-turbo 
