@@ -25,31 +25,38 @@ requirements:
     - {{ compiler('cxx') }}
     - python
     - cmake
-    - make                    # [not win]
-    - ninja                   # [win]
+    - meson
+    - ninja                   
     - pybind11
+    - libhwy
     - libjpeg-turbo 
     - libavif
     - libpng
+    - libdicom
     - openslide               
   host:
     - python
+    - libhwy
     - libjpeg-turbo 
     - libavif
     - libpng
+    - libdicom
     - openslide               
   run:
     - python
+    - libhwy
     - libjpeg-turbo
     - libavif
     - libpng
+    - libdicom
     - openslide               
 
 
 test:
   imports:
    - Iris
-
+   - Iris.Codec
+   - Iris.Encoder
 
 about:
   home: https://github.com/IrisDigitalPathology/Iris-Codec
